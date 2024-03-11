@@ -6,9 +6,7 @@ import { Socket, io } from 'socket.io-client'
 
 const App = () => {
 
-  useEffect(() => {
-   var socket= io("http://localhost:8080");
-  }, [])
+
   
   return (
 <div className='min-h-screen w-full'>

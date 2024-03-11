@@ -31,5 +31,21 @@ const io=require('socket.io')(server,{
 })
 
 io.on("connection",(socket)=>{
-    console.log("Connected to socket.io");
+    // console.log(`${socket.id} Joined`);
+    console.log("Socket Connected")
+
+    socket.on("join room",(room)=>{
+        socket.join(room.id);
+        console.log(`${socket.id} Joined Room `,room.id)
+    })
+    socket.on("drawing", (data) => {
+        socket.broadcast.emit("drawing", data);
+      });
+      socket.on("draw pause", (data) => {
+        socket.broadcast.emit("draw pause", data);
+      });
+    
+      socket.on("disconnect", () => {
+        console.log(`${socket.id} Left`);
+      });
 })
