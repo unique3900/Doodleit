@@ -2,7 +2,7 @@ import React from 'react'
 
 const JoinedUsers = () => {
   return (
-    <div>JoinedUsers</div>
+    <div className='col-span-1'>  JoinedUsers</div>
   )
 }
 
