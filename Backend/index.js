@@ -36,7 +36,8 @@ io.on("connection",(socket)=>{
 
     socket.on("join room",(room)=>{
         socket.join(room.id);
-        console.log(`${socket.id} Joined Room `,room.id)
+        console.log(`${room.username} Joined Room `,room.id)
+
     })
     socket.on("drawing", (data) => {
         socket.broadcast.emit("drawing", data);
@@ -44,8 +45,14 @@ io.on("connection",(socket)=>{
       socket.on("draw pause", (data) => {
         socket.broadcast.emit("draw pause", data);
       });
+
+      socket.on("new guess",(data)=>{
+        console.log(data)
+        socket.broadcast.emit("new guess",data);
+      })
     
       socket.on("disconnect", () => {
         console.log(`${socket.id} Left`);
       });
+
 })

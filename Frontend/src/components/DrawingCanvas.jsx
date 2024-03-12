@@ -15,8 +15,6 @@ const DrawingCanvas = () => {
 
   useEffect(() => {
 
-    const roomid=params?.id;
-    socket.emit("join room",{id:roomid})
     const drawBox = document.getElementById("drawBox").getBoundingClientRect();
 
 

@@ -5,7 +5,7 @@ import ChatBox from './ChatBox'
 
 const GamePage = () => {
   return (
-    <div className='grid grid-cols-7 justify-center'>
+    <div className='grid grid-cols-7 justify-center items-center'>
 
         <JoinedUsers/>
         <DrawingCanvas/>
