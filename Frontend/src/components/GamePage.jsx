@@ -7,7 +7,7 @@ const GamePage = () => {
   return (
     <div className='grid grid-cols-7 justify-center items-center'>
 
-        <JoinedUsers/>
+        {/* <JoinedUsers/> */}
         <DrawingCanvas/>
         <ChatBox/>
     </div>

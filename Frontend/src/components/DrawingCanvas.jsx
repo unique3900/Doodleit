@@ -13,10 +13,10 @@ const DrawingCanvas = () => {
   const ref = useRef();
   const params=useParams();
 
+
   useEffect(() => {
 
     const drawBox = document.getElementById("drawBox").getBoundingClientRect();
-
 
     const canvas = ref.current;
     canvas.width = drawBox.width;
@@ -38,8 +38,8 @@ const DrawingCanvas = () => {
   
   const handleMouseMove = async (e) => {
     const ctx = canvas.getContext("2d");
-    var x = e.clientX - 220;
-    var y = e.clientY -30 ;
+    var x = e.clientX ;
+    var y = e.clientY -100;
 
     if (hasMouseStopped) {
       ctx.lineTo(x, y);
@@ -50,8 +50,8 @@ const DrawingCanvas = () => {
   };
   const handleMouseDown = (e) => {
     const ctx = canvas.getContext("2d");
-    var x = e.clientX - 220;
-    var y = e.clientY -30;
+    var x = e.clientX ;
+    var y = e.clientY -100;
     ctx.moveTo(x, y);
     socket.emit("draw pause",{x,y})
     setHasMouseStopped(true);

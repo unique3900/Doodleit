@@ -22,6 +22,7 @@ const ChatBox = () => {
         return;
       }
       socket.emit("new guess", { guess, user });
+      setGuess("")
     } catch (error) {
       console.log(error);
     }
@@ -39,9 +40,9 @@ const ChatBox = () => {
 
   return (
     <div className="col-span-1 h-screen flex flex-col justify-end ml-10 mt-10 mb-24">
-      <div className="flex flex-col gap-1 mx-5 ">
+      <div className="flex flex-col gap-1  w-full ">
         {messages?.map((item, index) => (
-          <div className="flex gap-2 border-2 border-gray-500 w-full ">
+          <div className="flex gap-2 border-2 border-gray-500 min-w-full ">
             <p key={index} className="w-full font-bold">
               {item?.user + ":"}
             </p>
